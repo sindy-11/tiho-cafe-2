@@ -1,0 +1,2 @@
+import {Coffee} from 'lucide-react';
+export default function CTA({onReserve}:{onReserve:()=>void}){return <section className="final-cta"><Coffee size={38} strokeWidth={1.2}/><p className="eyebrow">ПУСТЬ СЕГОДНЯ БУДЕТ НЕМНОГО ТИШЕ</p><h2>Ваша следующая чашка<br/><em>уже ждёт.</em></h2><div><button className="button cream" onClick={onReserve}>Забронировать столик</button><a className="cta-link" href="#menu">Выбрать свой кофе</a></div></section>}

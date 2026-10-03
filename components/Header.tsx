@@ -1,0 +1,5 @@
+'use client';
+import {useState} from 'react';
+import {Menu,X} from 'lucide-react';
+import {navigation} from '@/lib/content';
+export default function Header({onReserve}:{onReserve:()=>void}) {const [open,setOpen]=useState(false);return <header className="header"><div className="header-inner"><a href="#home" className="logo" aria-label="Тихо — главная">тихо<span>coffee & slow living</span></a><nav className="desktop-nav" aria-label="Основная навигация">{navigation.map(([label,id])=><a key={id} href={`#${id}`}>{label}</a>)}</nav><button className="button small header-cta" onClick={onReserve}>Забронировать</button><button className="burger" aria-label={open?'Закрыть меню':'Открыть меню'} aria-expanded={open} aria-controls="mobile-navigation" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></div>{open&&<nav id="mobile-navigation" className="mobile-nav" aria-label="Мобильная навигация">{navigation.map(([label,id])=><a key={id} href={`#${id}`} onClick={()=>setOpen(false)}>{label}</a>)}<button className="button" onClick={()=>{setOpen(false);onReserve()}}>Забронировать столик</button></nav>}</header>}

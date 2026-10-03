@@ -1,0 +1,3 @@
+import {Bean,Croissant,Wifi,Dog} from 'lucide-react';
+import {Reveal} from './ui';
+export default function Features(){return <section className="section features-section" aria-label="Наши преимущества"><Reveal className="features-grid">{[{icon:Bean,title:'Кофе с характером',text:'Свежая обжарка и зерно, о котором мы знаем всё.'},{icon:Croissant,title:'Утро пахнет выпечкой',text:'Круассаны из нашей печи. Каждый день.'},{icon:Wifi,title:'Можно задержаться',text:'Быстрый Wi-Fi, розетки и ваш любимый столик.'},{icon:Dog,title:'Рады вашим друзьям',text:'Даже тем, у кого четыре лапы. Вода найдётся.'}].map(({icon:Icon,title,text})=><article key={title}><Icon size={29} strokeWidth={1.4}/><h3>{title}</h3><p>{text}</p></article>)}</Reveal></section>}
